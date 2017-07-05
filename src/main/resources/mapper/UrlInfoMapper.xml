@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.jaegyu.url.mapper.UrlInfoMapper">
+	<resultMap type="me.jaegyu.url.model.UrlInfo" id="urlInfo">
+		<id column="id" property="id" />
+		<id column="url" property="url" />
+		<id column="desc" property="desc" />
+		<id column="create_time" property="createTime" />
+		<id column="modify_time" property="modifyTime" />
+	</resultMap>
+
+	<select id="findAll" resultMap="urlInfo">
+		select * 
+		  from url_info
+	  order by modify_time desc 
+	</select>
+	
+	<select id="findLimitFive" resultMap="urlInfo">
+		select * 
+		  from url_info
+		  order by modify_time desc 
+		  limit 5
+	</select>
+	
+	<insert id="save" parameterType="me.jaegyu.url.model.UrlInfo" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		insert into url_info(url, desc, create_time, modify_time) values(#{url}, #{desc}, #{createTime}, #{modifyTime})
+	</insert>
+	
+</mapper>

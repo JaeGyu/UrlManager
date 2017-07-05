@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//@SpringApplicationConfiguration(classes = UrlManagerApplication.class)
+//@SpringApplicationConfiguration(classes = UrlManagerApplication.class) //버전이 올라가면서 제외됨
 @SpringBootTest(classes = UrlManagerApplication.class)
 public class UrlManagerApplicationTests {
 
