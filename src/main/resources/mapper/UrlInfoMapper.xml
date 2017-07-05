@@ -23,6 +23,13 @@
 		  limit 5
 	</select>
 	
+	<select id="findByUrl" parameterType="String" resultMap="urlInfo">
+		select *
+		  from url_info
+		where url = #{url}
+	
+	</select>
+	
 	<insert id="save" parameterType="me.jaegyu.url.model.UrlInfo" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
 		insert into url_info(url, desc, create_time, modify_time) values(#{url}, #{desc}, #{createTime}, #{modifyTime})
 	</insert>

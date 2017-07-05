@@ -44,7 +44,8 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-12 text-center">
-						<button class="btn btn-primary" ng-click="btn()">저장</button>
+						<button class="btn btn-primary" ng-click="save()">Save</button>
+						<button class="btn btn-danger" ng-click="reset()">Reset</button>
 					</div>
 				</div>
 			</form>
@@ -81,7 +82,11 @@
 				});
 			};
 			
-			$scope.btn = function(){
+			$scope.reset = function(){
+				$scope.create = {"url":"", "desc":""};
+			};
+			
+			$scope.save = function(){
 				console.log($scope.create);
 				$http({
 				    method: 'POST' ,
