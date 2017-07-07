@@ -6,7 +6,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -36,7 +35,7 @@ public class UrlManagerController {
 	 * url정보를 생성하고 db에서 url정보 리스트를 5개 조회해서 응답한다.
 	 * 클라이언트 쪽에서 넘어오는 VO를 DTO로 매핑 해서 사용할 것
 	 * 필수 값 검증 할 것
-	 * 에러에 대한 원인을 그에 맞게 클라이언트로 보내 줄 
+	 * 에러에 대한 원인을 그에 맞게 클라이언트로 보내 줄것
 	 * */
 	@PostMapping("/create")
 	public ResponseEntity create(@RequestBody @Valid UrlInfoDto.Create create, BindingResult bResult) {

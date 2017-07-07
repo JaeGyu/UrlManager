@@ -1,5 +1,6 @@
 package me.jaegyu.url.model;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import lombok.Data;
@@ -12,7 +13,8 @@ public class UrlInfoDto {
 	@Data
 	public static class Create {
 
-		@NotEmpty
+//		@NotEmpty
+		@NotBlank
 		private String url;
 		private String desc;
 	}

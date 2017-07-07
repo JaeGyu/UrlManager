@@ -2,6 +2,7 @@ package me.jaegyu.url.service;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ import me.jaegyu.url.model.UrlInfoDto;
 @Service
 public class UrlManagerService {
 
+	
+//	Logger logger = Logger.getLogger(UrlManagerService.class);
+	
 	@Autowired
 	private UrlInfoMapper mapper;
 
@@ -33,9 +37,11 @@ public class UrlManagerService {
 		}
 
 		System.out.println("저장 전 : " + info);
+		
 		// 1) 저장
 		mapper.save(info);
 		System.out.println("저장 후 : " + info);
+		
 		// 2) limit5 조회
 		return mapper.findLimitFive();
 	}
